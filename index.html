@@ -709,7 +709,7 @@ body.loaded .hero-star{
 }
 
 .time small{
-    font-size:7px;
+    font-size:9px;
     letter-spacing:3px;
     color:var(--gold);
 }
@@ -1118,19 +1118,22 @@ section{
 
 .marquee-track{
     width:max-content;
-
+    min-width:max-content;
+    flex-shrink:0;
     display:flex;
     align-items:center;
-
-    animation:
-        marquee 25s linear infinite;
-
+    animation:marquee 25s linear infinite;
+    animation-timing-function:linear;
+    animation-iteration-count:infinite;
     will-change:transform;
+    transform:translate3d(0,0,0);
 }
 
 .marquee-item{
     display:inline-flex;
     align-items:center;
+    flex:0 0 auto;
+    white-space:nowrap;
     gap:16px;
 
     margin-right:45px;
@@ -1404,7 +1407,7 @@ footer{
 
     color:var(--gold);
 
-    font-size:8px;
+    font-size:10px;
     letter-spacing:2px;
 }
 
@@ -1543,7 +1546,7 @@ footer{
 }
 
 .modal-label{
-    font-size:8px;
+    font-size:10px;
     letter-spacing:4px;
     color:var(--gold);
 }
@@ -1801,7 +1804,7 @@ footer{
 }
 
 .feedback-card-label{
-    font-size:8px;
+    font-size:10px;
     letter-spacing:3px;
     color:var(--gold);
 }
@@ -1866,7 +1869,7 @@ footer{
 }
 
 .map-caption span{
-    font-size:7px;
+    font-size:9px;
     letter-spacing:3px;
     color:var(--gold);
 }
@@ -1908,7 +1911,7 @@ footer{
 }
 
 .location-address span{
-    font-size:8px;
+    font-size:10px;
     letter-spacing:3px;
     color:var(--gold);
 }
@@ -2033,7 +2036,7 @@ footer{
 .follow-label{
     margin-top:34px;
     margin-bottom:16px;
-    font-size:8px;
+    font-size:10px;
     letter-spacing:3px;
     color:var(--gold);
 }
@@ -2069,7 +2072,7 @@ footer{
 
 .social-link em{
     font-style:normal;
-    font-size:7px;
+    font-size:9px;
     letter-spacing:2px;
     color:var(--gold);
 }
@@ -2254,7 +2257,7 @@ body.loaded .curtain-right{transform:translateX(59%);}
     }
 
     .hero-kicker{
-        font-size:8px;
+        font-size:10px;
         letter-spacing:3px;
         line-height:1.6;
         margin-bottom:22px;
@@ -2291,7 +2294,7 @@ body.loaded .curtain-right{transform:translateX(59%);}
         max-width:320px;
         min-height:48px;
         padding:0 18px;
-        font-size:8px;
+        font-size:10px;
         letter-spacing:1.5px;
     }
 
@@ -2316,7 +2319,7 @@ body.loaded .curtain-right{transform:translateX(59%);}
     }
 
     .time small{
-        font-size:6px;
+        font-size:8px;
         letter-spacing:1.5px;
     }
 
@@ -2381,7 +2384,7 @@ body.loaded .curtain-right{transform:translateX(59%);}
     }
 
     .label{
-        font-size:7px;
+        font-size:9px;
         letter-spacing:2.5px;
         padding:6px 12px;
         margin-bottom:16px;
@@ -2486,7 +2489,7 @@ body.loaded .curtain-right{transform:translateX(59%);}
         min-height:40px;
         padding:9px 15px;
         margin-top:18px;
-        font-size:8px;
+        font-size:10px;
         letter-spacing:1.5px;
     }
 
@@ -2565,7 +2568,7 @@ body.loaded .curtain-right{transform:translateX(59%);}
     }
 
     .prize p{
-        font-size:7px;
+        font-size:9px;
         letter-spacing:1.5px;
     }
 
@@ -2605,7 +2608,7 @@ body.loaded .curtain-right{transform:translateX(59%);}
     }
 
     .map-caption span{
-        font-size:6px;
+        font-size:8px;
         letter-spacing:2px;
     }
 
@@ -2634,7 +2637,7 @@ body.loaded .curtain-right{transform:translateX(59%);}
     }
 
     .location-address span{
-        font-size:7px;
+        font-size:9px;
         letter-spacing:2px;
     }
 
@@ -2658,7 +2661,7 @@ body.loaded .curtain-right{transform:translateX(59%);}
 
     .bazar-slot{
         min-height:150px;
-        font-size:8px;
+        font-size:10px;
     }
 
     .bazar-slot span{
@@ -2675,7 +2678,7 @@ body.loaded .curtain-right{transform:translateX(59%);}
     }
 
     .bazar-photo-caption{
-        font-size:7px;
+        font-size:9px;
         padding:13px 10px 11px;
     }
 
@@ -2683,7 +2686,7 @@ body.loaded .curtain-right{transform:translateX(59%);}
     .follow-label{
         margin-top:26px;
         margin-bottom:12px;
-        font-size:7px;
+        font-size:9px;
         letter-spacing:2.5px;
     }
 
@@ -2710,7 +2713,7 @@ body.loaded .curtain-right{transform:translateX(59%);}
 
     .social-link em{
         grid-column:2;
-        font-size:6px;
+        font-size:8px;
         margin-top:-5px;
     }
 
@@ -2725,7 +2728,7 @@ body.loaded .curtain-right{transform:translateX(59%);}
     }
 
     .cta-small{
-        font-size:7px;
+        font-size:9px;
         letter-spacing:3px;
     }
 
@@ -2776,7 +2779,7 @@ body.loaded .curtain-right{transform:translateX(59%);}
     }
 
     .modal-label{
-        font-size:7px;
+        font-size:9px;
         letter-spacing:2.5px;
     }
 
@@ -2810,7 +2813,7 @@ body.loaded .curtain-right{transform:translateX(59%);}
             18px
             calc(24px + env(safe-area-inset-bottom));
         gap:12px;
-        font-size:7px;
+        font-size:9px;
         line-height:1.6;
     }
 
@@ -2918,7 +2921,7 @@ body.loaded .curtain-right{transform:translateX(59%);}
         border:1px solid rgba(245,197,49,.82);
         border-radius:999px;
         color:var(--cream);
-        font-size:8px;
+        font-size:10px;
         line-height:1;
         letter-spacing:2.4px;
         box-shadow:none;
@@ -3003,7 +3006,7 @@ body.loaded .curtain-right{transform:translateX(59%);}
     }
 
     #about.intro .label{
-        font-size:7px;
+        font-size:9px;
         letter-spacing:2px;
     }
 
@@ -3670,15 +3673,19 @@ body.loaded .curtain-right{transform:translateX(59%);}
 
     <div class="marquee-track">
 
-        <span class="marquee-item">ALHAFEST <i>✦</i></span>
-        <span class="marquee-item">BE BRAVE <i>✦</i></span>
-        <span class="marquee-item">BE CREATIVE <i>✦</i></span>
-        <span class="marquee-item">OWN THE STAGE <i>✦</i></span>
+        <span class="marquee-item">SHINE <i>✦</i></span>
+        <span class="marquee-item">YOUR <i>✦</i></span>
+        <span class="marquee-item">LIGHT <i>✦</i></span>
+        <span class="marquee-item">BE <i>✦</i></span>
+        <span class="marquee-item">THE <i>✦</i></span>
+        <span class="marquee-item">HIGHLIGHT <i>✦</i></span>
 
-        <span class="marquee-item">ALHAFEST <i>✦</i></span>
-        <span class="marquee-item">BE BRAVE <i>✦</i></span>
-        <span class="marquee-item">BE CREATIVE <i>✦</i></span>
-        <span class="marquee-item">OWN THE STAGE <i>✦</i></span>
+        <span class="marquee-item">SHINE <i>✦</i></span>
+        <span class="marquee-item">YOUR <i>✦</i></span>
+        <span class="marquee-item">LIGHT <i>✦</i></span>
+        <span class="marquee-item">BE <i>✦</i></span>
+        <span class="marquee-item">THE <i>✦</i></span>
+        <span class="marquee-item">HIGHLIGHT <i>✦</i></span>
 
     </div>
 
