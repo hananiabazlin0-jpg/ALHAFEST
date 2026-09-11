@@ -1678,7 +1678,10 @@ footer{
     }
 
     .btn{
-        width:230px;
+        width:auto;
+        min-width:0;
+        padding-left:28px;
+        padding-right:28px;
     }
 
     .countdown{
@@ -4659,3 +4662,27 @@ const BAZAR_PHOTOS = [
 
 </body>
 </html>
+<!-- FINAL MOBILE HERO SIZE ONLY -->
+<style>
+@media (max-width:600px){
+    /* ALHAFEST — enlarged on phone only */
+    .hero h1{
+        font-size:92px !important;
+        letter-spacing:2px !important;
+    }
+
+    /* Hero buttons — narrower, matching the ALHAFEST visual width */
+    .hero-buttons{
+        width:230px !important;
+        max-width:calc(100vw - 40px) !important;
+        margin-left:auto !important;
+        margin-right:auto !important;
+    }
+
+    .hero-buttons .btn{
+        width:230px !important;
+        max-width:100% !important;
+        box-sizing:border-box !important;
+    }
+}
+</style>
