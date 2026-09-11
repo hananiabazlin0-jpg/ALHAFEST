@@ -1633,9 +1633,13 @@ footer{
         gap:8px;
     }
 
-    .logo-divider,
-    .alhadiid-wordmark-img{
+    .logo-divider{
         display:none;
+    }
+
+    .alhadiid-wordmark-img{
+        display:block;
+        height:16px;
     }
 
     .nav-badges{
@@ -1660,7 +1664,10 @@ footer{
     }
 
     .hero h1{
-        font-size:80px;
+        font-size:clamp(38px,13vw,68px);
+        letter-spacing:2px;
+        line-height:.85;
+        word-break:break-word;
     }
 
     .hero-subtitle{
@@ -1679,14 +1686,23 @@ footer{
 
     .countdown{
         margin-top:35px;
+        flex-wrap:wrap;
+        row-gap:10px;
     }
 
     .time{
-        width:70px;
+        width:58px;
+        margin:0 3px;
+        padding:8px 4px;
     }
 
     .time strong{
-        font-size:25px;
+        font-size:20px;
+    }
+
+    .time small{
+        font-size:6px;
+        letter-spacing:1px;
     }
 
     .section{
