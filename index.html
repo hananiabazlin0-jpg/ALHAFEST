@@ -3196,6 +3196,11 @@ body.loaded .curtain-right{transform:translateX(59%);}
     #about.intro .intro-text p+p{
         margin-top:16px;
     }
+
+    #about.intro .intro-text .about-highlight{
+        color:#fff4df;
+        font-weight:700;
+    }
 }
 
 @media (max-width:380px){
@@ -3466,6 +3471,8 @@ body.loaded .curtain-right{transform:translateX(59%);}
         background:var(--cream);
         border-top:1px solid rgba(61,20,28,.10);
         box-shadow:0 10px 24px rgba(0,0,0,.16);
+        max-height:calc(100svh - 70px);
+        overflow-y:auto;
         opacity:0;
         visibility:hidden;
         pointer-events:none;
@@ -3478,21 +3485,6 @@ body.loaded .curtain-right{transform:translateX(59%);}
         visibility:visible;
         pointer-events:auto;
         transform:translateY(0);
-    }
-
-    .mobile-menu-close{
-        position:absolute;
-        top:7px;
-        right:12px;
-        width:28px;
-        height:28px;
-        border:0;
-        background:transparent;
-        color:var(--red-dark);
-        font-size:23px;
-        line-height:1;
-        font-family:Arial,sans-serif;
-        cursor:pointer;
     }
 
     .mobile-menu-links{
@@ -3522,7 +3514,78 @@ body.loaded .curtain-right{transform:translateX(59%);}
     .mobile-menu-links a:active{
         background:rgba(224,166,28,.12);
     }
+
+    .mobile-contact-person{
+        margin:22px 8px 0;
+        padding:14px 16px;
+        border:1px solid rgba(61,20,28,.30);
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        gap:16px;
+        background:rgba(255,255,255,.10);
+    }
+
+    .mobile-contact-person span{
+        color:var(--red-dark);
+        font-family:"DM Sans",sans-serif;
+        font-size:10px;
+        font-weight:700;
+        letter-spacing:1.8px;
+        white-space:nowrap;
+    }
+
+    .mobile-contact-person a{
+        color:var(--red-dark);
+        font-family:"DM Sans",sans-serif;
+        font-size:10px;
+        font-weight:700;
+        letter-spacing:1.5px;
+        text-decoration:none;
+        white-space:nowrap;
+    }
+
+    .mobile-contact-person a:active{
+        opacity:.65;
+    }
 }
+
+/* CONTACT PERSON — small bordered link below all social links */
+.contact-person-link{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:max-content;
+    min-width:230px;
+    margin:22px auto 0;
+    padding:12px 22px;
+    border:1px solid var(--gold);
+    color:var(--gold);
+    font-family:"DM Sans",sans-serif;
+    font-size:10px;
+    font-weight:700;
+    letter-spacing:2.2px;
+    text-decoration:none;
+    text-transform:uppercase;
+    transition:background .25s ease,color .25s ease;
+}
+
+.contact-person-link:hover{
+    background:var(--gold);
+    color:var(--red-dark);
+}
+
+@media (max-width:600px){
+    .contact-person-link{
+        width:calc(100% - 16px);
+        min-width:0;
+        margin:18px 8px 0;
+        padding:13px 16px;
+        font-size:10px;
+        letter-spacing:1.8px;
+    }
+}
+
 
 </style>
 </head>
@@ -3574,13 +3637,17 @@ body.loaded .curtain-right{transform:translateX(59%);}
     </div>
 
     <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
-        <button class="mobile-menu-close" id="mobileMenuClose" type="button" aria-label="Tutup menu">×</button>
         <div class="mobile-menu-links">
             <a href="#home">HOME</a>
             <a href="#about">ABOUT</a>
             <a href="#competitions">COMPETITION</a>
             <a href="#bazar">BAZAR</a>
             <a href="#contact">CONTACT</a>
+        </div>
+        <div class="mobile-contact-person">
+            <span>CONTACT PERSON</span>
+            <!-- GANTI href DI BAWAH INI DENGAN LINK WA.ME -->
+            <a href="https://wa.me/" target="_blank" rel="noopener">WHATSAPP →</a>
         </div>
     </div>
 
@@ -3713,11 +3780,11 @@ body.loaded .curtain-right{transform:translateX(59%);}
         <div class="intro-text">
 
             <p>
-                ALHAFEST 2026: SPOTLIGHT dengan tema “A Stage for Young Generation to Express Talents and Build Confidence” merupakan ajang tahunan yang menjadi wadah bagi generasi muda untuk mengekspresikan bakat, mengembangkan potensi, dan membangun kepercayaan diri melalui kompetisi yang edukatif dan inspiratif. Kegiatan ini menghadirkan berbagai perlombaan bidang bahasa, keagamaan, akademis, seni, dan olahraga bagi jenjang TK, SD, hingga SMP.
+                ALHAFEST 2026: SPOTLIGHT dengan tema “<span class="about-highlight">A Stage for Young Generation to Express Talents and Build Confidence</span>” merupakan ajang tahunan yang menjadi <span class="about-highlight">wadah bagi generasi muda</span> untuk mengekspresikan bakat, mengembangkan potensi, dan <span class="about-highlight">membangun kepercayaan diri</span> melalui kompetisi yang edukatif dan inspiratif. Kegiatan ini menghadirkan berbagai perlombaan bidang bahasa, keagamaan, akademis, seni, dan olahraga bagi jenjang <span class="about-highlight">TK, SD, hingga SMP</span>.
             </p>
 
             <p>
-                Selain berbagai kompetisi, ALHAFEST 2026 turut dimeriahkan dengan Bazar sebagai wadah promosi sekaligus bagian dari rangkaian kegiatan yang menambah kemeriahan acara. Kehadiran Bazar memberikan kesempatan bagi pengunjung untuk menikmati berbagai pilihan produk dan turut menciptakan suasana festival yang lebih ramai, interaktif, dan menarik.
+                Selain berbagai kompetisi, ALHAFEST 2026 turut dimeriahkan dengan <span class="about-highlight">Bazar</span> sebagai <span class="about-highlight">wadah promosi</span> sekaligus bagian dari rangkaian kegiatan yang menambah kemeriahan acara. Kehadiran Bazar memberikan kesempatan bagi pengunjung untuk menikmati berbagai pilihan produk dan turut menciptakan suasana festival yang <span class="about-highlight">lebih ramai, interaktif, dan menarik.</span>
 
             </p>
 
@@ -4456,6 +4523,15 @@ body.loaded .curtain-right{transform:translateX(59%);}
 
         </div>
 
+        <!-- CONTACT PERSON — replace href with your wa.me link -->
+        <a
+            href="#"
+            class="contact-person-link"
+            aria-label="Contact Person"
+        >
+            CONTACT PERSON ↗
+        </a>
+
     </div>
 
 </section>
@@ -5062,8 +5138,7 @@ const BAZAR_PHOTOS = [
 (function(){
     const toggle = document.getElementById('mobileMenuToggle');
     const menu = document.getElementById('mobileMenu');
-    const close = document.getElementById('mobileMenuClose');
-    if(!toggle || !menu || !close) return;
+    if(!toggle || !menu) return;
 
     function setMenu(open){
         menu.classList.toggle('open', open);
@@ -5076,10 +5151,6 @@ const BAZAR_PHOTOS = [
         setMenu(!menu.classList.contains('open'));
     });
 
-    close.addEventListener('click', function(){
-        setMenu(false);
-    });
-
     menu.querySelectorAll('a').forEach(function(link){
         link.addEventListener('click', function(){
             setMenu(false);
@@ -5090,6 +5161,23 @@ const BAZAR_PHOTOS = [
         if(window.innerWidth > 600) setMenu(false);
     });
 })();
+</script>
+
+
+<script>
+/* =====================================================
+   CONTACT PERSON WHATSAPP
+   GANTI NOMOR DI BAWAH INI DENGAN NOMOR WHATSAPP KAMU.
+   Format: kode negara + nomor, TANPA tanda +, spasi, atau strip.
+   Contoh Indonesia: 6281234567890
+===================================================== */
+const CONTACT_PERSON_WA = "https://wa.me/081219868013";
+
+document.querySelectorAll(".contact-person-link, .mobile-contact-person a").forEach(link => {
+    link.href = CONTACT_PERSON_WA;
+    link.target = "_blank";
+    link.rel = "noopener";
+});
 </script>
 
 </body>
