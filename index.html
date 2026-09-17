@@ -3515,39 +3515,13 @@ body.loaded .curtain-right{transform:translateX(59%);}
         background:rgba(224,166,28,.12);
     }
 
-    .mobile-contact-person{
-        margin:22px 8px 0;
-        padding:14px 16px;
-        border:1px solid rgba(61,20,28,.30);
-        display:flex;
-        align-items:center;
-        justify-content:space-between;
-        gap:16px;
-        background:rgba(255,255,255,.10);
-    }
 
-    .mobile-contact-person span{
-        color:var(--red-dark);
-        font-family:"DM Sans",sans-serif;
-        font-size:10px;
-        font-weight:700;
-        letter-spacing:1.8px;
-        white-space:nowrap;
-    }
 
-    .mobile-contact-person a{
-        color:var(--red-dark);
-        font-family:"DM Sans",sans-serif;
-        font-size:10px;
-        font-weight:700;
-        letter-spacing:1.5px;
-        text-decoration:none;
-        white-space:nowrap;
-    }
 
-    .mobile-contact-person a:active{
-        opacity:.65;
-    }
+
+
+
+
 }
 
 /* CONTACT PERSON — small bordered link below all social links */
@@ -3643,11 +3617,6 @@ body.loaded .curtain-right{transform:translateX(59%);}
             <a href="#competitions">COMPETITION</a>
             <a href="#bazar">BAZAR</a>
             <a href="#contact">CONTACT</a>
-        </div>
-        <div class="mobile-contact-person">
-            <span>CONTACT PERSON</span>
-            <!-- GANTI href DI BAWAH INI DENGAN LINK WA.ME -->
-            <a href="https://wa.me/" target="_blank" rel="noopener">WHATSAPP →</a>
         </div>
     </div>
 
@@ -3784,7 +3753,7 @@ body.loaded .curtain-right{transform:translateX(59%);}
             </p>
 
             <p>
-                Selain berbagai kompetisi, ALHAFEST 2026 turut dimeriahkan dengan <span class="about-highlight">Bazar</span> sebagai <span class="about-highlight">wadah promosi</span> sekaligus bagian dari rangkaian kegiatan yang menambah kemeriahan acara. Kehadiran Bazar memberikan kesempatan bagi pengunjung untuk menikmati berbagai pilihan produk dan turut menciptakan suasana festival yang <span class="about-highlight">lebih ramai, interaktif, dan menarik.</span>
+                Selain berbagai kompetisi, ALHAFEST 2026 turut dimeriahkan dengan <span class="about-highlight">Bazar</span> sebagai <span class="about-highlight">wadah promosi</span> sekaligus bagian dari rangkaian kegiatan yang menambah kemeriahan acara. Kehadiran Bazar memberikan kesempatan bagi pengunjung untuk menikmati berbagai pilihan produk dan turut menciptakan suasana festival yang lebih ramai, interaktif, dan menarik.
 
             </p>
 
@@ -5173,7 +5142,7 @@ const BAZAR_PHOTOS = [
 ===================================================== */
 const CONTACT_PERSON_WA = "https://wa.me/081219868013";
 
-document.querySelectorAll(".contact-person-link, .mobile-contact-person a").forEach(link => {
+document.querySelectorAll(".contact-person-link").forEach(link => {
     link.href = CONTACT_PERSON_WA;
     link.target = "_blank";
     link.rel = "noopener";
