@@ -1584,7 +1584,34 @@ footer{
 .modal-box.color-pink .modal-label,
 .modal-box.color-ivory .modal-label,
 .modal-box.color-pink .modal-close,
-.modal-box.color-ivory .modal-close{
+.modal-box.color-ivory .modal-label{
+    font-size:10px;
+    letter-spacing:4px;
+    color:var(--gold);
+}
+
+.modal h2{
+    font-family:"Baloo 2",cursive;
+    font-size:60px;
+    line-height:.9;
+    margin:20px 0;
+}
+
+.modal-line{
+    width:60px;
+    height:1px;
+    background:var(--gold);
+    margin-bottom:25px;
+}
+
+.modal p{
+    color:var(--gold);
+    font-size:14px;
+    line-height:1.9;
+    margin-bottom:30px;
+}
+
+.modal-close{
     color:var(--red-dark);
 }
 
@@ -1630,6 +1657,17 @@ footer{
     }
 }
 
+/* Samakan tombol silang semua cabang lomba, termasuk MEWARNAI/PINK.
+   Selector warna sebelumnya ikut mengecilkan font close button menjadi 10px. */
+.modal-box.color-pink .modal-close,
+.modal-box.color-ivory .modal-close{
+    font-size:30px !important;
+    line-height:1 !important;
+    width:auto !important;
+    height:auto !important;
+    padding:0 !important;
+}
+
 .modal-close{
     position:absolute;
     top:15px;
@@ -1645,87 +1683,148 @@ footer{
     cursor:pointer;
 }
 
-.modal-label{
-    font-size:10px;
-    letter-spacing:4px;
-    color:var(--gold);
-}
-
-.modal h2{
-    font-family:"Baloo 2",cursive;
-    font-size:60px;
-    line-height:.9;
-    margin:20px 0;
-}
-
-.modal-line{
-    width:60px;
-    height:1px;
-    background:var(--gold);
-    margin-bottom:25px;
-}
-
-.modal p{
-    color:var(--gold);
-    font-size:14px;
-    line-height:1.9;
-    margin-bottom:30px;
-}
-
-
-/* =====================================================
-   REVEAL
-===================================================== */
-
-.reveal{
+.registration-reminder{
+    position:absolute;
+    inset:0;
+    z-index:20;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:28px;
+    background:rgba(18,3,5,.58);
+    backdrop-filter:blur(3px);
+    -webkit-backdrop-filter:blur(3px);
     opacity:0;
-    transform:translateY(40px);
-    transition:
-        opacity .8s ease,
-        transform .8s ease;
+    visibility:hidden;
+    pointer-events:none;
+    transition:opacity .22s ease,visibility .22s ease;
 }
-
-.reveal.visible{
+.registration-reminder.open{
     opacity:1;
-    transform:none;
+    visibility:visible;
+    pointer-events:auto;
+}
+.registration-reminder-box{
+    position:relative;
+    width:min(430px,88%);
+    padding:28px 30px 24px;
+    background:linear-gradient(145deg,var(--red),var(--red-dark));
+    border:1px solid var(--gold);
+    box-shadow:0 18px 50px rgba(0,0,0,.38);
+    text-align:left;
+}
+/* Reminder mengikuti warna + border cabang lomba yang sedang dibuka. */
+.modal-box.color-cherry .registration-reminder-box{
+    background:linear-gradient(145deg,var(--red),var(--red-dark));
+    border-color:var(--gold);
+}
+.modal-box.color-truffle .registration-reminder-box{
+    background:linear-gradient(145deg,var(--brown),#2E0E12);
+    border-color:var(--gold);
+}
+.modal-box.color-maroon .registration-reminder-box{
+    background:linear-gradient(145deg,var(--red-dark),#2E0E12);
+    border-color:var(--gold);
+}
+.modal-box.color-pink .registration-reminder-box{
+    background:linear-gradient(145deg,#F4C9CE,var(--gold));
+    border-color:var(--red-dark);
+}
+.modal-box.color-ivory .registration-reminder-box{
+    background:var(--cream);
+    border-color:var(--red-dark);
+}
+.modal-box.color-yellow .registration-reminder-box{
+    background:linear-gradient(145deg,var(--yellow),var(--gold));
+    border-color:var(--red-dark);
 }
 
-
-/* =====================================================
-   RESPONSIVE
-===================================================== */
-
-@media(max-width:900px){
-
-    .nav-links{
-        display:none;
-    }
-
-    .intro-grid{
-        grid-template-columns:1fr;
-        gap:50px;
-    }
-
-    .comp-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .prize-grid{
-        grid-template-columns:1fr;
-    }
-
-    .prize,
-    .prize.first{
-        min-height:250px;
-    }
-
-    .schedule-item{
-        grid-template-columns:
-            50px 120px 1fr 20px;
-    }
-
+.modal-box.color-pink .registration-reminder-box h3,
+.modal-box.color-pink .registration-reminder-box p,
+.modal-box.color-ivory .registration-reminder-box h3,
+.modal-box.color-ivory .registration-reminder-box p,
+.modal-box.color-yellow .registration-reminder-box h3,
+.modal-box.color-yellow .registration-reminder-box p{
+    color:var(--red-dark) !important;
+    opacity:1 !important;
 }
 
+.modal-box.color-pink .registration-reminder-continue,
+.modal-box.color-ivory .registration-reminder-continue,
+.modal-box.color-yellow .registration-reminder-continue{
+    border-color:var(--red-dark);
+    background:var(--red-dark);
+    color:var(--cream);
+}
+.registration-reminder-close{
+    position:absolute;
+    top:8px;
+    right:12px;
+    border:0;
+    background:none;
+    color:var(--gold);
+    font-family:"Baloo 2",cursive;
+    font-size:24px;
+    line-height:1;
+    cursor:pointer;
+}
+.modal-box.color-pink .registration-reminder-close,
+.modal-box.color-ivory .registration-reminder-close{
+    color:var(--red-dark);
+}
+.registration-reminder-label{
+    margin-bottom:10px;
+    color:var(--gold);
+    font-size:9px;
+    font-weight:700;
+    letter-spacing:3px;
+}
+.registration-reminder-box h3{
+    margin:0 32px 10px 0;
+    color:var(--cream) !important;
+    opacity:1 !important;
+    font-family:"Baloo 2",cursive;
+    font-size:25px;
+    line-height:1.08;
+    font-weight:700;
+}
+.registration-reminder-box p{
+    margin:0 0 18px;
+    color:var(--cream) !important;
+    opacity:1 !important;
+    font-family:"DM Sans",sans-serif;
+    font-size:12px;
+    line-height:1.7;
+}
+.modal-box.color-pink .registration-reminder-box h3,
+.modal-box.color-ivory .registration-reminder-box h3,
+.modal-box.color-pink .registration-reminder-box p,
+.modal-box.color-ivory .registration-reminder-box p{
+    color:var(--red-dark) !important;
+    opacity:1 !important;
+}
+.registration-reminder-continue{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-height:40px;
+    padding:0 18px;
+    border:1px solid var(--gold);
+    border-radius:999px;
+    background:var(--gold);
+    color:var(--red-dark);
+    font-family:"DM Sans",sans-serif;
+    font-size:9px;
+    font-weight:700;
+    letter-spacing:1.7px;
+    cursor:pointer;
+}
+.modal-box.color-pink .registration-reminder-continue,
+.modal-box.color-ivory .registration-reminder-continue{
+    border-color:var(--red-dark);
+    background:var(--red-dark);
+    color:var(--cream);
+}
 
 @media(max-width:600px){
 
@@ -1860,6 +1959,12 @@ footer{
 }
 
 @media(max-width:600px){
+    .registration-reminder{padding:18px;}
+    .registration-reminder-box{width:min(360px,92%);padding:25px 22px 21px;}
+    .registration-reminder-box h3{font-size:22px;}
+    .registration-reminder-box p{font-size:12px;line-height:1.65;}
+    .registration-reminder-continue{width:100%;min-height:42px;}
+
     .modal-actions{
         flex-direction:column;
     }
@@ -2871,7 +2976,9 @@ body.loaded .curtain-right{transform:translateX(59%);}
         right:16px;
         width:42px;
         height:42px;
-        font-size:27px;
+        font-size:27px !important;
+        line-height:1 !important;
+        padding:0 !important;
         z-index:3;
     }
 
@@ -3038,7 +3145,7 @@ body.loaded .curtain-right{transform:translateX(59%);}
         position:relative;
         z-index:2;
         max-width:100%;
-        font-family:"Cormorant Garamond",serif;
+        font-family:"Baloo 2",cursive;
         font-size:clamp(43px,12.5vw,64px);
         font-weight:700;
         line-height:.88;
@@ -3294,6 +3401,129 @@ body.loaded .curtain-right{transform:translateX(59%);}
     }
 }
 
+
+
+/* =====================================================
+   MOBILE NAVIGATION — hamburger + dropdown only on phones
+===================================================== */
+.mobile-menu-toggle,
+.mobile-menu{
+    display:none;
+}
+
+@media(max-width:600px){
+    nav{
+        position:fixed !important;
+        z-index:1000 !important;
+    }
+
+    .mobile-menu-toggle{
+        position:absolute;
+        left:14px;
+        top:50%;
+        transform:translateY(-50%);
+        width:34px;
+        height:34px;
+        padding:7px 5px;
+        border:0;
+        background:transparent;
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        gap:4px;
+        cursor:pointer;
+        z-index:1003;
+    }
+
+    .mobile-menu-toggle span{
+        display:block;
+        width:22px;
+        height:2px;
+        border-radius:2px;
+        background:var(--red-dark);
+        transition:transform .25s ease, opacity .25s ease;
+    }
+
+    .mobile-menu-toggle.active span:nth-child(1){
+        transform:translateY(6px) rotate(45deg);
+    }
+
+    .mobile-menu-toggle.active span:nth-child(2){
+        opacity:0;
+    }
+
+    .mobile-menu-toggle.active span:nth-child(3){
+        transform:translateY(-6px) rotate(-45deg);
+    }
+
+    .mobile-menu{
+        position:absolute;
+        top:100%;
+        left:0;
+        right:0;
+        display:block;
+        padding:14px 18px 20px;
+        background:var(--cream);
+        border-top:1px solid rgba(61,20,28,.10);
+        box-shadow:0 10px 24px rgba(0,0,0,.16);
+        opacity:0;
+        visibility:hidden;
+        pointer-events:none;
+        transform:translateY(-8px);
+        transition:opacity .25s ease, transform .25s ease, visibility .25s ease;
+    }
+
+    .mobile-menu.open{
+        opacity:1;
+        visibility:visible;
+        pointer-events:auto;
+        transform:translateY(0);
+    }
+
+    .mobile-menu-close{
+        position:absolute;
+        top:7px;
+        right:12px;
+        width:28px;
+        height:28px;
+        border:0;
+        background:transparent;
+        color:var(--red-dark);
+        font-size:23px;
+        line-height:1;
+        font-family:Arial,sans-serif;
+        cursor:pointer;
+    }
+
+    .mobile-menu-links{
+        display:flex;
+        flex-direction:column;
+        align-items:stretch;
+        gap:0;
+        padding-top:16px;
+    }
+
+    .mobile-menu-links a{
+        display:block;
+        padding:13px 8px;
+        color:var(--red-dark);
+        font-family:"DM Sans",sans-serif;
+        font-size:12px;
+        font-weight:600;
+        letter-spacing:2px;
+        text-align:left;
+        border-bottom:1px solid rgba(61,20,28,.12);
+    }
+
+    .mobile-menu-links a:last-child{
+        border-bottom:0;
+    }
+
+    .mobile-menu-links a:active{
+        background:rgba(224,166,28,.12);
+    }
+}
+
 </style>
 </head>
 
@@ -3306,6 +3536,12 @@ body.loaded .curtain-right{transform:translateX(59%);}
 ===================================================== -->
 
 <nav>
+
+    <button class="mobile-menu-toggle" id="mobileMenuToggle" type="button" aria-label="Buka menu navigasi" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
 
     <div class="nav-logo-cluster">
 
@@ -3335,6 +3571,17 @@ body.loaded .curtain-right{transform:translateX(59%);}
 
         <a href="#contact">CONTACT</a>
 
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+        <button class="mobile-menu-close" id="mobileMenuClose" type="button" aria-label="Tutup menu">×</button>
+        <div class="mobile-menu-links">
+            <a href="#home">HOME</a>
+            <a href="#about">ABOUT</a>
+            <a href="#competitions">COMPETITION</a>
+            <a href="#bazar">BAZAR</a>
+            <a href="#contact">CONTACT</a>
+        </div>
     </div>
 
 </nav>
@@ -4253,6 +4500,16 @@ body.loaded .curtain-right{transform:translateX(59%);}
             ×
         </button>
 
+        <div class="registration-reminder" id="registrationReminder" aria-hidden="true">
+            <div class="registration-reminder-box" role="dialog" aria-modal="false" aria-labelledby="registrationReminderTitle">
+                <button class="registration-reminder-close" id="registrationReminderClose" type="button" aria-label="Tutup reminder">×</button>
+                <div class="registration-reminder-label">REMINDER PENDAFTARAN</div>
+                <h3 id="registrationReminderTitle">Pendaftaran dapat ditutup lebih cepat.</h3>
+                <p>Registrasi akan ditutup jika batas kuota peserta sudah terpenuhi. Pastikan kamu segera mendaftar sebelum kuota habis.</p>
+                <button class="registration-reminder-continue" id="registrationReminderContinue" type="button">LANJUT LIHAT DETAIL →</button>
+            </div>
+        </div>
+
         <div class="modal-label">
             ALHAFEST COMPETITION
         </div>
@@ -4467,6 +4724,11 @@ const modalDescription=
 const closeButton=
     document.getElementById("closeModal");
 
+// Reminder hanya berlaku selama halaman ini tetap terbuka.
+// Reload / keluar website = status kembali seperti semula.
+let registrationReminderHasShown = false;
+let registrationReminderTimer = null;
+
 
 posters.forEach(poster=>{
 
@@ -4499,6 +4761,24 @@ posters.forEach(poster=>{
 
         modal.classList.add("open");
 
+        // Detail lomba tampil terlebih dahulu. Reminder baru muncul setelah 1 detik.
+        // Status HANYA disimpan di memori halaman ini: tidak memakai localStorage.
+        const reminder = document.getElementById("registrationReminder");
+
+        if(reminder && !registrationReminderHasShown && !registrationReminderTimer){
+            registrationReminderTimer = setTimeout(()=>{
+                registrationReminderTimer = null;
+
+                if(modal.classList.contains("open") && !registrationReminderHasShown){
+                    reminder.classList.add("open");
+                    reminder.setAttribute("aria-hidden","false");
+                    // Begitu reminder benar-benar tampil, tandai sudah pernah dibuka
+                    // sampai halaman ini di-reload atau ditinggalkan.
+                    registrationReminderHasShown = true;
+                }
+            },1000);
+        }
+
         document.body.style.overflow="hidden";
 
     });
@@ -4506,9 +4786,30 @@ posters.forEach(poster=>{
 });
 
 
-function closeModal(){
+const registrationReminder = document.getElementById("registrationReminder");
+const registrationReminderClose = document.getElementById("registrationReminderClose");
+const registrationReminderContinue = document.getElementById("registrationReminderContinue");
 
+function dismissRegistrationReminder(){
+    if(!registrationReminder) return;
+    registrationReminder.classList.remove("open");
+    registrationReminder.setAttribute("aria-hidden","true");
+}
+
+if(registrationReminderClose){
+    registrationReminderClose.addEventListener("click",dismissRegistrationReminder);
+}
+if(registrationReminderContinue){
+    registrationReminderContinue.addEventListener("click",dismissRegistrationReminder);
+}
+
+function closeModal(){
     modal.classList.remove("open");
+
+    if(registrationReminderTimer){
+        clearTimeout(registrationReminderTimer);
+        registrationReminderTimer = null;
+    }
 
     document.body.style.overflow="auto";
 
@@ -4752,6 +5053,42 @@ const BAZAR_PHOTOS = [
             ${photo.caption ? `<figcaption class="bazar-photo-caption">${photo.caption}</figcaption>` : ""}
         </figure>
     `).join("");
+})();
+</script>
+
+
+
+<script>
+(function(){
+    const toggle = document.getElementById('mobileMenuToggle');
+    const menu = document.getElementById('mobileMenu');
+    const close = document.getElementById('mobileMenuClose');
+    if(!toggle || !menu || !close) return;
+
+    function setMenu(open){
+        menu.classList.toggle('open', open);
+        toggle.classList.toggle('active', open);
+        toggle.setAttribute('aria-expanded', String(open));
+        menu.setAttribute('aria-hidden', String(!open));
+    }
+
+    toggle.addEventListener('click', function(){
+        setMenu(!menu.classList.contains('open'));
+    });
+
+    close.addEventListener('click', function(){
+        setMenu(false);
+    });
+
+    menu.querySelectorAll('a').forEach(function(link){
+        link.addEventListener('click', function(){
+            setMenu(false);
+        });
+    });
+
+    window.addEventListener('resize', function(){
+        if(window.innerWidth > 600) setMenu(false);
+    });
 })();
 </script>
 
