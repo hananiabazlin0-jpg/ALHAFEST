@@ -714,6 +714,24 @@ body.loaded .hero-star{
     color:var(--gold);
 }
 
+.registration-deadline{
+    margin-top:12px;
+    text-align:center;
+    color:var(--gold);
+    font-size:10px;
+    letter-spacing:2px;
+    line-height:1.5;
+    font-weight:600;
+}
+
+@media(max-width:600px){
+    .registration-deadline{
+        margin-top:10px;
+        font-size:9px;
+        letter-spacing:1.5px;
+    }
+}
+
 
 /* =====================================================
    SECTION
@@ -817,6 +835,88 @@ section{
     margin-top:20px;
 }
 
+
+
+/* =====================================================
+   GENERAL GUIDEBOOK — ABOUT SECTION
+   Moved from the competition footer into About so the
+   guide is presented as a shared rulebook for all participants.
+===================================================== */
+.general-guidebook{
+    margin-top:32px;
+    max-width:500px;
+    padding:22px 24px 24px;
+    border:1px solid rgba(245,197,49,.55);
+    border-radius:20px 20px 42px 20px;
+    background:rgba(245,197,49,.055);
+    box-shadow:0 14px 35px rgba(0,0,0,.12);
+}
+
+.general-guidebook-label{
+    color:var(--yellow);
+    font-size:10px;
+    letter-spacing:2.5px;
+    font-weight:700;
+}
+
+.general-guidebook p{
+    margin:9px 0 18px;
+    color:var(--cream);
+    font-size:13px;
+    line-height:1.75;
+}
+
+.general-guidebook-btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-height:44px;
+    padding:0 20px;
+    border:1.5px solid var(--gold);
+    border-radius:999px;
+    color:var(--gold);
+    font-size:10px;
+    letter-spacing:1.7px;
+    font-weight:700;
+    transition:.3s cubic-bezier(.34,1.56,.64,1);
+}
+
+.general-guidebook-btn:hover{
+    transform:translateY(-3px);
+    background:var(--gold);
+    color:var(--red-dark);
+    box-shadow:0 10px 25px rgba(212,160,23,.25);
+}
+
+@media(max-width:600px){
+    .general-guidebook{
+        width:100%;
+        max-width:none;
+        margin-top:26px;
+        padding:20px 18px 21px;
+        border-radius:18px 18px 34px 18px;
+    }
+
+    .general-guidebook-label{
+        font-size:9px;
+        letter-spacing:2px;
+    }
+
+    .general-guidebook p{
+        margin:8px 0 16px;
+        font-size:12px;
+        line-height:1.75;
+    }
+
+    .general-guidebook-btn{
+        width:100%;
+        min-height:46px;
+        padding:0 14px;
+        font-size:9px;
+        letter-spacing:1.4px;
+        box-sizing:border-box;
+    }
+}
 
 /* =====================================================
    COMPETITIONS
@@ -2303,7 +2403,7 @@ body.loaded .curtain-right{transform:translateX(59%);}
 
     .countdown{
         width:100%;
-        margin-top:28px;
+        margin-top:24px;
         gap:5px;
     }
 
@@ -2494,12 +2594,6 @@ body.loaded .curtain-right{transform:translateX(59%);}
         margin-top:18px;
         font-size:10px;
         letter-spacing:1.5px;
-    }
-
-    .comp-note{
-        margin-top:28px;
-        font-size:11px;
-        line-height:1.7;
     }
 
     /* MARQUEE */
@@ -3333,6 +3427,10 @@ body.loaded .curtain-right{transform:translateX(59%);}
 
         </div>
 
+        <div class="registration-deadline">
+            BATAS WAKTU PENDAFTARAN&nbsp; • &nbsp;31 OKTOBER 2026
+        </div>
+
     </div>
 
 </section>
@@ -3375,6 +3473,14 @@ body.loaded .curtain-right{transform:translateX(59%);}
                 Selain berbagai kompetisi, ALHAFEST 2026 turut dimeriahkan dengan Bazar sebagai wadah promosi sekaligus bagian dari rangkaian kegiatan yang menambah kemeriahan acara. Kehadiran Bazar memberikan kesempatan bagi pengunjung untuk menikmati berbagai pilihan produk dan turut menciptakan suasana festival yang lebih ramai, interaktif, dan menarik.
 
             </p>
+
+            <div class="general-guidebook">
+                <div class="general-guidebook-label">PANDUAN UMUM PESERTA</div>
+                <p>Informasi dan ketentuan umum yang wajib dipahami seluruh peserta sebelum mengikuti rangkaian ALHAFEST 2026.</p>
+                <a href="#" id="guidebookLink" class="general-guidebook-btn">
+                    LIHAT GENERAL GUIDEBOOK →
+                </a>
+            </div>
 
         </div>
 
@@ -3658,11 +3764,6 @@ body.loaded .curtain-right{transform:translateX(59%);}
         </article>
 
     </div>
-
-    <p class="comp-note">
-        ✦ Detail lengkap setiap lomba dapat dilihat pada
-        <a href="#" id="guidebookLink">Guide Book ALHAFEST 2026</a>. ✦
-    </p>
 
 </section>
 
@@ -4209,7 +4310,7 @@ body.loaded .curtain-right{transform:translateX(59%);}
 ===================================================== */
 
 const registrationLink = "https://forms.google.com/"; // Link umum (opsional)
-const guidebookLink = "https://drive.google.com/drive/u/0/folders/1zEjAG7c-AHDdMzhwst52A3kiWXNBiB7P";     // Guide Book umum (opsional)
+const guidebookLink = "https://drive.google.com/file/d/167F7bh-W5zzKKInm_eoMSkX5XTtD7BIW/view?usp=sharing";     // Guide Book umum (opsional)
 
 /* =====================================================
    LINK SETIAP CABANG LOMBA
@@ -4219,27 +4320,27 @@ const guidebookLink = "https://drive.google.com/drive/u/0/folders/1zEjAG7c-AHDdM
 const competitionLinks = {
     "PIDATO ARAB": {
         registration: "https://docs.google.com/forms/d/e/1FAIpQLScwIWTmhPBJzViMfFBHaPWGjgpDUag3tnyi26YoIDhxi6fUmQ/viewform",
-        guidebook: "https://drive.google.com/file/d/1Vth94-WgnLzCxox7mDjbP-oyzICot2yM/view"
+        guidebook: "https://drive.google.com/file/d/19Q6VsCo65gaTNGFTRtszH7pHkpDHBzR9/view?usp=sharing"
     },
     "MEWARNAI": {
         registration: "LINK_REGISTRASI_MEWARNAI",
         guidebook: "LINK_GUIDEBOOK_MEWARNAI"
     },
     "MHQ": {
-        registration: "https://docs.google.com/forms/d/e/1FAIpQLScPvJiwkrmUy5HLfdViUdlmZvDe5ZKshKRa4EDlFpqOYgo2iA/viewform",
-        guidebook: "https://drive.google.com/file/d/1-AH5rXxWkly_6VlZKe8xNNOP8k-hXS6r/view?usp=sharing"
+        registration: "https://forms.gle/PonR75jHSy8MyySb6",
+        guidebook: "https://drive.google.com/file/d/1shUzge0jnIpeL721hnL6wABn4HRpTAVZ/view?usp=sharing"
     },
     "LCC": {
-        registration: "https://docs.google.com/forms/d/e/1FAIpQLSfx7L1eKqW_iyhbQa5cSG53meArso8VXXCWeSBomxvW8DJWmA/viewform",
-        guidebook: "https://drive.google.com/file/d/130y5S2Kzqx-0It_EgwWMn8NES0t0B53q/view?usp=sharing"
+        registration: "https://forms.gle/8DLXcYTxi25PdT2X6",
+        guidebook: "https://drive.google.com/file/d/1W__jNaacbNr6Dxk7x0X2nJzsY0yeT7bn/view?usp=sharing"
     },
     "FUTSAL": {
         registration: "https://docs.google.com/forms/d/e/1FAIpQLSd5B_48K3Ik2mvDkzNvCWWgAvj6PqrtFrVaG6Kkiek5TgpMqA/viewform",
         guidebook: "https://drive.google.com/file/d/1mMjFcnWMkOSVanP59c5JpuMD3YX6L4Mv/view?usp=sharing"
     },
     "STORY TELLING": {
-        registration: "https://docs.google.com/forms/d/e/1FAIpQLSd8EWjoli2X23ACyGwFR5sX1nZq6KmsIaNAS2Ok7PMddiLoLQ/viewform",
-        guidebook: "LINK_GUIDEBOOK_STORYTELLING"
+        registration: "https://forms.gle/1FQyYkNs4oQ7nTF67",
+        guidebook: "https://drive.google.com/file/d/1InueTl4a14n_lBeMPwEms3TPyjp7Pwjp/view?usp=sharing"
     }
 };
 
@@ -4447,17 +4548,13 @@ document.addEventListener("keydown",(e)=>{
 ===================================================== */
 
 /*
-   GANTI TANGGAL DI SINI
+   BATAS WAKTU PENDAFTARAN
+   31 OKTOBER 2026 — 23:59 WIB
 */
 
-const eventStart=
+const registrationDeadline=
     new Date(
-        "2026-11-09T08:00:00+07:00"
-    );
-
-const eventEnd=
-    new Date(
-        "2026-11-12T23:59:59+07:00"
+        "2026-10-31T23:59:59+07:00"
     );
 
 
@@ -4465,8 +4562,7 @@ function countdown(){
 
     const now=new Date();
 
-    const target=
-        now<eventStart ? eventStart : eventEnd;
+    const target=registrationDeadline;
 
     const distance=
         target-now;
@@ -4684,4 +4780,35 @@ const BAZAR_PHOTOS = [
         box-sizing:border-box !important;
     }
 }
+
+/* =====================================================
+   HERO LANDING — FINAL SPACING TUNING
+   Keep the landing page balanced on desktop and phone.
+===================================================== */
+.hero-kicker{
+    transform:translateY(-8px);
+}
+
+.countdown{
+    margin-top:32px;
+}
+
+.registration-deadline{
+    margin-top:16px;
+}
+
+@media(max-width:600px){
+    .hero-kicker{
+        transform:translateY(-6px);
+    }
+
+    .countdown{
+        margin-top:31px;
+    }
+
+    .registration-deadline{
+        margin-top:14px;
+    }
+}
+
 </style>
